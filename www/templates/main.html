@@ -1,0 +1,42 @@
+<ion-view view-title="">
+  <ion-content class="chat-content-outer">
+    <div class="chat-content">
+      <div class="no-message" ng-show="chat.length <= 0">
+        <h1>Hallo !</h1>
+        <p>Ketik di kolom chat untuk memulai</p>
+      </div>
+      <div class="chat-item" ng-class="d.isBot" ng-repeat="d in chat">
+        <div class="card">
+          <div class="item item-text-wrap">
+            {{d.text}}
+            <div class="movie-list" ng-if="d.isMovie">
+              <ul>
+                <li ng-repeat="e in d.list">{{e}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card bilboard-list" ng-show="d.isBilboard">
+          <div class="item item-text-wrap" ng-repeat="e in d.list">
+            <p class="rank">{{$index+1}}</p>
+            <p><strong>Artist : </strong> {{e.artist}}</p>
+            <p><strong>Track : </strong> {{e.title}}</p>
+          </div>
+        </div>
+      </div>
+      <ion-spinner icon="android" class="green-spinner" ng-show="loading"></ion-spinner>
+      <a id="chat-bottom"></a>
+    </div>
+  </ion-content>
+  <div class="bar bar-footer">
+    <form ng-submit="submit()" class="form-chat">
+      <div class="chat-bar item item-input-inset">
+        <div class="item-input-wrapper">
+          <input type="text" placeholder="Type or Command here" class="chat-command" ng-model="text">
+        </div>
+        <button class="button button-small button-positive" ng-show="text" ng-click="submit()"><i class="icon ion-android-send"></i></button>
+        <button class="button button-small button-positive" ng-hide="text" ng-click="voice()"><i class="icon ion-mic-a"></i></button>
+      </div>
+    </form>
+  </div>
+</ion-view>

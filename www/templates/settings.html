@@ -1,0 +1,13 @@
+<ion-view view-title="Settings">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Assistant URL</span>
+        <input type="text" placeholder="http://0.0.0.0/assist" ng-model="settings.masterUrl">
+      </label>
+    </div>
+    <div class="padding">
+      <button class="button button-full button-positive" ng-click="save()">Save</button>
+    </div>
+  </ion-content>
+</ion-view>

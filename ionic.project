@@ -1,0 +1,12 @@
+{
+  "name": "ndesek",
+  "app_id": "a50e3644",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

@@ -1,0 +1,185 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+.platform-android {
+  .bar {
+    .title {
+      line-height: 60px;
+    }
+    .button {
+      min-height: 50px;
+      min-width: 50px;
+    }
+  }
+  .bar-header {
+    height: 60px;
+  }
+
+  .has-header {
+    top: 60px;
+  }
+}
+
+.green-theme {
+  .bar-header {
+    background: #558B2F;
+    .title, .button {
+      color: #fff;
+    }
+  }
+}
+.bar-footer {
+  min-height: 60px;
+  padding: 0;
+  .chat-bar {
+    width: 100.5%;
+    padding: 0px;
+    margin: 0;
+    .item-input-wrapper {
+      background: transparent;
+    }
+    input[type=text] {
+      width: 100%;
+    }
+    .button {
+      background: #558B2F;
+      margin-right: 0px;
+      min-height: 60px;
+      min-width: 60px;
+      border-radius: 0;
+      border: none;
+    }
+  }
+}
+
+.chat-content-outer {
+  background: #EDF3E9;
+}
+
+.form-chat {
+  margin: 0;
+  width: 100%;
+}
+
+.chat-content {
+  padding-bottom: 65px;
+  background: #EDF3E9;
+  margin-top: 10px;
+  .chat-item {
+    overflow: hidden;
+    text-align: right;
+    .card {
+      display: inline-block;
+      box-shadow: none;
+      border: 1px solid #eaeaea;
+      text-align: right;
+      margin: 10px;
+      .item {
+        min-width: 15em;
+      }
+    }
+    &.bot {
+      text-align: left;
+      .card {
+        border-color: lighten(#558B2F, 20%);
+        text-align: left;
+        .item {
+          background-color: #C1EFA2;
+          color: #315A15;
+        }
+        &.bilboard-list {
+          display: block;
+          border-color: #ddd;
+          .item {
+            background: #fff;
+            .rank {
+              float: left;
+              min-height: 51px;
+              min-width: 41px
+              font-size: 2em;
+              margin: 0px 30px 0px 15px;
+              line-height: 40px;
+              color: #BFBFBF;
+            }
+          }
+        }
+      }
+      &.is-movie {
+        .card {
+          border-color: #DCCFC3;
+          text-align: left;
+          display: block;
+          .item {
+            background-color: #fbf5f0;
+            color: #B1885D;
+            min-width: auto;
+          }
+          .movie-list {
+            margin: 20px 0;
+            ul {
+              li {
+                border-bottom: 1px dashed #B1885D;
+                padding: 5px 0px;
+                font-weight: 500;
+                &:last-child {
+                  border-bottom: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.green-spinner {
+  stroke: #558B2F;
+  margin: 10px;
+}
+
+.ndesek-app {
+  .bar-stable.bar.bar-header {
+    .button.button-icon.button-clear.ion-navicon {
+      background: url(../img/ndesek-logo.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 55px;
+      height: 50px;
+      margin: 0px 0px 0px 5px;
+      display: block;
+      max-height: none;
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+.no-message {
+  text-align: center;
+  margin-top: 5em;
+  color: #74826B;
+  h1 {
+    color: #A2AD9B;
+  }
+}

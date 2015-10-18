@@ -167,6 +167,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
           }
         }
       }
+      &.binusmaya-schedule {
+        .card.binusmaya-schedule {
+          display: block;
+          border-color: #D0D0D0;
+          .item {
+            background-color: #F9F9F9;
+            color: #383838;
+          }
+        }
+      }
       &.is-movie {
         .card {
           border-color: #DCCFC3;

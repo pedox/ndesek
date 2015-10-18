@@ -3,6 +3,13 @@ var _brain = {
 
   },
 
+  /**
+   * Binusmaya Instance from Angular Factory
+   */
+  binusMaya: function() {
+    return angular.element(document.body).injector().get('BinusMaya');
+  },
+
   getResponse: function(text, callback) {
 
     console.log("get response !");

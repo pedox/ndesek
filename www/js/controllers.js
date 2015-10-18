@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['BinusMayaFactory'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -67,6 +67,20 @@ angular.module('starter.controllers', [])
 .controller('MainCtrl', function($scope, $stateParams, $ionicScrollDelegate, $timeout) {
 
   $scope.chat = [
+    {text:'Jadwal kuliah kamu hari ini', isBot: 'bot binusmaya-schedule', isBimaySchedule: true,
+    list: [
+      {
+        name: 'Enterpreneour',
+        room: '825',
+        time: '09:20 - 11:00'
+      },
+      {
+        name: 'Komputer Jaringan',
+        room: '600',
+        time: '11:20 - 13:00'
+      }
+    ]
+    }
     /*{text:'Ini Halte terdekat dalam radius 500m :)', isBot: 'bot is-busway', isBusway: true,
       list: [{
         distance: 343,
@@ -151,8 +165,9 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('SettingsCtrl', function($scope, $stateParams, $ionicPopup) {
+.controller('SettingsCtrl', function($scope, $stateParams, $ionicPopup, BinusMaya) {
 
+  $scope.binusmaya = {};
   $scope.settings = JSON.parse(localStorage.settings);
 
   $scope.save = function() {
@@ -161,6 +176,46 @@ angular.module('starter.controllers', [])
       template: 'Setting Saved'
     });
     localStorage.settings = JSON.stringify($scope.settings);
+  };
+
+  $scope.logoutBimay = function() {
+    delete $scope.settings.binusmaya;
+    localStorage.settings = JSON.stringify($scope.settings);
+  };
+
+  $scope.loginBimay = function() {
+    delete localStorage.cookie;
+    if (!($scope.binusmaya.userid && $scope.binusmaya.password)) {
+      $ionicPopup.alert({
+        title: 'Oops !',
+        template: 'Please Input Binusian ID and Password'
+      });
+    } else {
+      cordova.plugin.pDialog.init({
+          theme : 'HOLO_DARK',
+          progressStyle : 'SPINNER',
+          cancelable : false,
+          title : 'Please Wait...',
+          message : 'Checking User Credential'
+      });
+      BinusMaya.login($scope.binusmaya.userid, $scope.binusmaya.password)
+      .then(function(name) {
+        cordova.plugin.pDialog.dismiss();
+        console.log(name);
+        $scope.settings.binusmaya = {
+          name: name,
+          binusid: $scope.binusmaya.userid,
+          password: $scope.binusmaya.password
+        };
+        localStorage.settings = JSON.stringify($scope.settings);
+      }, function(e) {
+        cordova.plugin.pDialog.dismiss();
+        $ionicPopup.alert({
+          title: 'Oops !',
+          template: e.err ? e.err : 'Something wrong !'
+        });
+      });
+    }
   };
 
 });

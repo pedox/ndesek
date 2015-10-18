@@ -41,6 +41,13 @@
           </div>
         </div>
 
+        <div class="card binusmaya-schedule" ng-show="d.isBimaySchedule">
+          <div class="item" ng-repeat="e in d.list">
+            {{e.name}}
+            <p>Ruang : {{e.room}} &mdash; <i class="icon ion-android-time"></i> : {{e.time}}</p>
+          </div>
+        </div>
+
       </div>
       <ion-spinner icon="android" class="green-spinner" ng-show="loading"></ion-spinner>
       <a id="chat-bottom"></a>

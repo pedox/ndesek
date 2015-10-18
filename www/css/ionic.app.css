@@ -9400,6 +9400,12 @@ a.button {
             .chat-content .chat-item.bot .card.busway-route .item h1 {
               font-size: 1em;
               color: #E6E9EF; }
+      .chat-content .chat-item.bot.binusmaya-schedule .card.binusmaya-schedule {
+        display: block;
+        border-color: #D0D0D0; }
+        .chat-content .chat-item.bot.binusmaya-schedule .card.binusmaya-schedule .item {
+          background-color: #F9F9F9;
+          color: #383838; }
       .chat-content .chat-item.bot.is-movie .card {
         border-color: #DCCFC3;
         text-align: left;

@@ -15,25 +15,25 @@
 
     <div class="card">
       <div class="item item-divider">Binusmaya Old API</div>
-      <div class="list list-inset">
-        Logedin As <strong>Muhammad Naufal Fadhil</strong>
+      <div class="list list-inset" ng-show="settings.binusmaya">
+        Logedin As <strong>{{settings.binusmaya.name}}</strong>
       </div>
-      <!--<div class="list list-inset">
+      <div class="list list-inset" ng-hide="settings.binusmaya">
         <label class="item item-input">
-          <input type="text" placeholder="Binusian ID">
+          <input type="text" placeholder="Binusian ID" ng-model="binusmaya.userid">
         </label>
         <label class="item item-input">
-          <input type="text" placeholder="Password">
+          <input type="text" placeholder="Password" ng-model="binusmaya.password">
         </label>
-      </div>-->
+      </div>
       <div class="padding">
-        <button class="button button-full button-assertive" ng-click="save()">Logout &amp; Change Credential</button>
-        <!--<button class="button button-full button-positive" ng-click="save()">Check Credential and login</button>-->
+        <button ng-show="settings.binusmaya" class="button button-full button-assertive" ng-click="logoutBimay()">Logout &amp; Change Credential</button>
+        <button ng-hide="settings.binusmaya" class="button button-full button-positive" ng-click="loginBimay()">Check Credential and login</button>
       </div>
     </div>
 
     <div class="padding">
-      <a class="button button-full button-stable" href="/#/app/about">About</a>
+      <a class="button button-full button-stable" href="#/app/about">About</a>
     </div>
 
   </ion-content>

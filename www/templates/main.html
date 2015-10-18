@@ -23,6 +23,24 @@
             <p><strong>Track : </strong> {{e.title}}</p>
           </div>
         </div>
+
+        <div class="card busway-list" ng-show="d.isBusway">
+          <div class="item item-text-wrap" ng-repeat="e in d.list">
+            <h1>{{e.name}}</h1>
+            <p>Distance <em>+</em>{{e.distance}}M</p>
+          </div>
+        </div>
+
+        <div class="card busway-route" ng-show="d.isBuswayRoute">
+          <div class="station-list" ng-repeat="(idx,e) in d.list">
+            <em ng-show="idx >= 1"><i class="icon ion-network"></i> transit</em>
+            <div class="item item-icon-left" ng-repeat="f in e.stations">
+              <i class="icon ion-android-bus"></i>
+              {{f.name}}
+            </div>
+          </div>
+        </div>
+
       </div>
       <ion-spinner icon="android" class="green-spinner" ng-show="loading"></ion-spinner>
       <a id="chat-bottom"></a>

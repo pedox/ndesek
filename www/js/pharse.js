@@ -114,6 +114,26 @@ var _pharse = [
       {text: 'Kambing itu Riski !'}
     ]
   },
+  {
+    index: 0,
+    pattern: /^halte (busway|transjakarta) (sekitar|dekat|di sekitar) (di sini|sini)/i,
+    repeatGila: false,
+    isBusway: true,
+    ifrepeat: [],
+    response: [{
+      text: 'sedang mencari'
+    }]
+  },
+  {
+    index: 0,
+    pattern: /^rute (busway|transjakarta) dari (.*) (sampai|ke) (.*)/i,
+    repeatGila: false,
+    isBuswayRoute: true,
+    ifrepeat: [],
+    response: [{
+      text: 'sedang mencari'
+    }]
+  },
 ];
 
 
@@ -121,7 +141,8 @@ var _pharse = [
 var _pMovie = [
   'ada film apa aja',
   'film di bioskop hari ini',
-  'daftar film di bioskop hari ini'
+  'daftar film di bioskop hari ini',
+  /^film apa aja (yang ){0,}di puter di bioskop/i
 ];
 for(var i = 0;i < _pMovie.length; i++)
 {
@@ -147,7 +168,7 @@ var _pMusic = [
   'daftar billboard',
   'list musik terkini'
 ];
-for(var i = 0;i < _pMovie.length; i++)
+for(var i = 0;i < _pMusic.length; i++)
 {
   _pharse.push({
       index: 0,

@@ -115,11 +115,54 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
             .rank {
               float: left;
               min-height: 51px;
-              min-width: 41px
+              min-width: 41px;
               font-size: 2em;
               margin: 0px 30px 0px 15px;
               line-height: 40px;
               color: #BFBFBF;
+            }
+          }
+        }
+        &.busway-list {
+          display: block;
+          border-color: #3A70CC;
+          .item {
+            background: #3E82F5;
+            border-color: #3A70CC;
+            h1 {
+              font-size: 1.2em;
+              color: #E6E9EF;
+            }
+            p {
+              color: #FBFBFB;
+              em {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+        &.busway-route {
+          display: block;
+          border-color: #3A70CC;
+          em {
+            text-align: center;
+            display: block;
+            text-transform: uppercase;
+            padding: 10px;
+            background: #E1E4EA;
+            font-weight: bold;
+            color: #757A86;
+          }
+          .item {
+            background: #3E82F5;
+            border-color: #3A70CC;
+            color: #E6E9EF;
+            i {
+              color: #254884;
+            }
+            h1 {
+              font-size: 1em;
+              color: #E6E9EF;
             }
           }
         }
@@ -172,6 +215,9 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
       &:before {
         display: none;
       }
+      &.hide {
+        display: none;
+      }
     }
   }
 }
@@ -181,5 +227,21 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
   color: #74826B;
   h1 {
     color: #A2AD9B;
+  }
+}
+
+.about-page {
+  background: #EDF3E9;
+  .ndesek-logo {
+    width: 150px;
+    margin: 55px auto 20px;
+    display: block;
+  }
+  text-align: center;
+  h1 {
+    font-size: 1.2em;
+  }
+  p {
+    font-size: 13px;
   }
 }

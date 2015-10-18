@@ -9362,10 +9362,44 @@ a.button {
             .chat-content .chat-item.bot .card.bilboard-list .item .rank {
               float: left;
               min-height: 51px;
+              min-width: 41px;
               font-size: 2em;
               margin: 0px 30px 0px 15px;
               line-height: 40px;
               color: #BFBFBF; }
+        .chat-content .chat-item.bot .card.busway-list {
+          display: block;
+          border-color: #3A70CC; }
+          .chat-content .chat-item.bot .card.busway-list .item {
+            background: #3E82F5;
+            border-color: #3A70CC; }
+            .chat-content .chat-item.bot .card.busway-list .item h1 {
+              font-size: 1.2em;
+              color: #E6E9EF; }
+            .chat-content .chat-item.bot .card.busway-list .item p {
+              color: #FBFBFB; }
+              .chat-content .chat-item.bot .card.busway-list .item p em {
+                text-decoration: underline; }
+        .chat-content .chat-item.bot .card.busway-route {
+          display: block;
+          border-color: #3A70CC; }
+          .chat-content .chat-item.bot .card.busway-route em {
+            text-align: center;
+            display: block;
+            text-transform: uppercase;
+            padding: 10px;
+            background: #E1E4EA;
+            font-weight: bold;
+            color: #757A86; }
+          .chat-content .chat-item.bot .card.busway-route .item {
+            background: #3E82F5;
+            border-color: #3A70CC;
+            color: #E6E9EF; }
+            .chat-content .chat-item.bot .card.busway-route .item i {
+              color: #254884; }
+            .chat-content .chat-item.bot .card.busway-route .item h1 {
+              font-size: 1em;
+              color: #E6E9EF; }
       .chat-content .chat-item.bot.is-movie .card {
         border-color: #DCCFC3;
         text-align: left;
@@ -9398,6 +9432,8 @@ a.button {
   max-height: none; }
   .ndesek-app .bar-stable.bar.bar-header .button.button-icon.button-clear.ion-navicon:before {
     display: none; }
+  .ndesek-app .bar-stable.bar.bar-header .button.button-icon.button-clear.ion-navicon.hide {
+    display: none; }
 
 .no-message {
   text-align: center;
@@ -9405,3 +9441,15 @@ a.button {
   color: #74826B; }
   .no-message h1 {
     color: #A2AD9B; }
+
+.about-page {
+  background: #EDF3E9;
+  text-align: center; }
+  .about-page .ndesek-logo {
+    width: 150px;
+    margin: 55px auto 20px;
+    display: block; }
+  .about-page h1 {
+    font-size: 1.2em; }
+  .about-page p {
+    font-size: 13px; }

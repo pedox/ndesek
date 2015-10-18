@@ -1,13 +1,40 @@
 <ion-view view-title="Settings">
   <ion-content>
-    <div class="list">
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Assistant URL</span>
-        <input type="text" placeholder="http://0.0.0.0/assist" ng-model="settings.masterUrl">
-      </label>
+    <div class="card">
+      <div class="item item-divider">Basic Settings</div>
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Assistant URL</span>
+          <input type="text" placeholder="http://0.0.0.0/assist" ng-model="settings.masterUrl">
+        </label>
+      </div>
+      <div class="padding">
+        <button class="button button-full button-positive" ng-click="save()">Save</button>
+      </div>
     </div>
+
+    <div class="card">
+      <div class="item item-divider">Binusmaya Old API</div>
+      <div class="list list-inset">
+        Logedin As <strong>Muhammad Naufal Fadhil</strong>
+      </div>
+      <!--<div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="Binusian ID">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Password">
+        </label>
+      </div>-->
+      <div class="padding">
+        <button class="button button-full button-assertive" ng-click="save()">Logout &amp; Change Credential</button>
+        <!--<button class="button button-full button-positive" ng-click="save()">Check Credential and login</button>-->
+      </div>
+    </div>
+
     <div class="padding">
-      <button class="button button-full button-positive" ng-click="save()">Save</button>
+      <a class="button button-full button-stable" href="/#/app/about">About</a>
     </div>
+
   </ion-content>
 </ion-view>

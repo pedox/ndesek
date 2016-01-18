@@ -255,3 +255,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     font-size: 13px;
   }
 }
+.settings-page {
+  .card {
+    box-shadow: none;
+    .item {
+      &.item-divider {
+        background: transparent;
+      }
+    }
+  }
+}

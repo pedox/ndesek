@@ -23,6 +23,13 @@ var _brain = {
         res = null,
         i = 0;
 
+    if(localStorage.hasReply) {
+      var replyObj = JSON.parse(localStorage.hasReply)
+      ,   reply = this.listPharse[replyObj.index].response[replyObj.random].reply;
+      pharse = reply;
+      length = reply.length;
+    }
+
     while (i < length && _ketemu === false) {
       if (typeof pharse[i].pattern === "object") {
         // do regex pattern
@@ -49,6 +56,13 @@ var _brain = {
     }
 
     if (!response.text) {
+
+      if(localStorage.hasReply) {
+        delete localStorage.hasReply;
+        this.getResponse(text, callback);
+        return false;
+      }
+
       var noFound = [
         'saya tidak mengerti bahasa mu ?',
         'kamu tuh ngomong opo :(',
@@ -100,7 +114,9 @@ var _brain = {
       });
     } else if (pharse[i].isBusway && res.type === 'response') {
       navigator.geolocation.getCurrentPosition(function(d) {
-        var listHalte = findLocation.findNearby(d.coords.latitude, d.coords.longitude);
+        //var listHalte = findLocation.findNearby(d.coords.latitude, d.coords.longitude);
+        var listHalte = findLocation.findNearby(-6.2057546, 106.7705255);
+        
         if(listHalte.length > 0) {
           response.isBot = 'bot is-busway';
           response.isBusway = true;
@@ -115,7 +131,7 @@ var _brain = {
         console.log(response);
         callback(response);
       }, function(d) {
-        response.text = "Maaf aku tidak bisa menemukan lokasi kakak ... ";
+        response.text = "Maaf aku tidak bisa menemukan lokasi ... ";
         callback(response);
       });
     } else if (pharse[i].isBuswayRoute && res.type === 'response') {
@@ -164,7 +180,7 @@ var _brain = {
           }
           callback(response);
         }, function(d) {
-          response.text = "koneksi internet nya bermasalah kak :(";
+          response.text = "koneksi internet nya bermasalah :(";
           callback(response);
         });
       }
@@ -176,7 +192,8 @@ var _brain = {
   },
 
   _setResponse: function(pharse, i) {
-    var obj = '';
+    var obj = ''
+    ,   _t = this;
     if (localStorage.repeatPharse == i) {
       if (pharse[i].repeatGila === false) {
         obj = 'response';
@@ -196,16 +213,33 @@ var _brain = {
 
     if (pharse[i][obj].length > 1) {
       var randIndex = Math.floor(Math.random() * pharse[i][obj].length);
+      _t.setReply(pharse, i, obj, randIndex);
       return {
         text: pharse[i][obj][randIndex].text,
         type: obj
       };
     } else {
       // Response hanya terdiri 1 objek
+      _t.setReply(pharse, i, obj, 0);
       return {
         text: pharse[i][obj][0].text,
         type: obj
       };
+    }
+  },
+
+  setReply: function(pharse, i, obj, randIndex) {
+    var replies = pharse[i][obj][randIndex];
+
+    if(replies.reply) {
+      console.log("hash next response !");
+      localStorage.hasReply = JSON.stringify({
+        index: i,
+        random: randIndex
+      });
+    } else {
+      console.log("no next response !");
+      delete localStorage.hasReply;
     }
   },
 

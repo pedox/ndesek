@@ -8,15 +8,13 @@ var _pharse = [
     pattern: /^h{1,}((e|a){1,})(l{1,})(o{1,})/i,
     repeatGila: 5,
     ifrepeat: [
+      {text: '._.'},
       {text: 'lu kenapa gand :('},
       {text: 'kenapa mas ? :('},
       {text: 'gila ya :( ?'}
     ],
     response: [
-      {text: 'halo jugag ! :)'},
-      {text: 'yakk hallo ! :)'},
-      {text: 'wazaaap !! :D'},
-      {text: 'hallo jugag kak ! :)'}
+      {text: 'Apa kabar !'},
     ]
   },
   {
@@ -28,9 +26,12 @@ var _pharse = [
       {text: 'kenapa mas ? :('},
       {text: 'gila ya :( ?'}
     ],
+    reply: [
+
+    ],
     response: [
+      {text: 'sedang menjawab pertanyaan anda !'},
       {text: 'aku ga ngapa ngapain aku cuma robot hehe'},
-      {text: 'aku mah apa atuh ! :('},
     ]
   },
   {
@@ -116,6 +117,56 @@ var _pharse = [
   },
   {
     index: 0,
+    pattern: /^liburan enak nya kemana/i,
+    repeatGila: false,
+    ifrepeat: [],
+    response: [
+      {text: 'ane ga ke mana mana gand'}
+    ]
+  },
+
+  {
+    index: 0,
+    pattern: /^dota y(o|u)k/i,
+    repeatGila: 2,
+    ifrepeat: [
+      {text: 'bawel --"'},
+      {text: 'buset !'},
+      {text: 'bodo amaat !'}
+    ],
+    response: [
+      {
+        text: 'MMR gua kegedean',
+        reply: [
+          {
+            pattern: /MMR (.*) (be|b)rapa/i,
+            response: [
+              {text: 'pokoknya banyak'},
+              {text: 'ada deh takut sombong'},
+              {text: 'mau tau banget ?'}
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    index: 0,
+    pattern: /^csgo y(o|u)k/i,
+    repeatGila: 2,
+    ifrepeat: [
+      {text: 'bawel --"'},
+      {text: 'buset !'},
+      {text: 'bodo amaat !'}
+    ],
+    response: [
+      {
+        text: 'yah robot mana bisa main csgo',
+      }
+    ]
+  },
+  {
+    index: 0,
     pattern: /^halte (busway|transjakarta) (sekitar|dekat|di sekitar) (di sini|sini)/i,
     repeatGila: false,
     isBusway: true,
@@ -134,6 +185,58 @@ var _pharse = [
       text: 'sedang mencari'
     }]
   },
+  {
+    index: 0,
+    pattern: /^apa lagu favorit mu/i,
+    repeatGila: false,
+    ifrepeat: [],
+    response: [{
+      text: 'saya robot saya tida suka musik !'
+    }]
+  },
+  {
+    index: 0,
+    pattern: /^(aku|saya) (be|b)lajar ai/i,
+    repeatGila: false,
+    ifrepeat: [],
+    response: [
+      {text: 'matkul keren tuh !'},
+      {text: 'matkul keren sih tapi susah banget !'},
+      {text: 'keren !!'}
+    ]
+  },
+  {
+    index: 0,
+    pattern: /^(aku|saya) (be|b)lajar (calculus|kalkulus)/i,
+    repeatGila: false,
+    ifrepeat: [],
+    response: [
+      {text: 'Matkul macam apa itu ! ._.'},
+      {text: 'Kepala ga pecah gand ? ._.'}
+    ]
+  },
+  {
+    index: 0,
+    pattern: /^(aku|saya) (be|b)lajar (.*)/i,
+    repeatGila: false,
+    ifrepeat: [],
+    response: [
+      {text: 'wih anak rajin'},
+      {text: 'Semangat !!'},
+      {text: 'wih anak rajin'}
+    ]
+  },
+  {
+    index: 0,
+    pattern: /^apakah (.*)/i,
+    repeatGila: false,
+    ifrepeat: [],
+    response: [
+      {text: 'iya !!'},
+      {text: 'mungkin'},
+      {text: 'tidaa !'}
+    ]
+  }
 ];
 
 

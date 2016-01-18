@@ -67,20 +67,16 @@ angular.module('starter.controllers', ['BinusMayaFactory'])
 .controller('MainCtrl', function($scope, $stateParams, $ionicScrollDelegate, $timeout) {
 
   $scope.chat = [
-    {text:'Jadwal kuliah kamu hari ini', isBot: 'bot binusmaya-schedule', isBimaySchedule: true,
+    //{text:'Rute Busway dari Sumber Waras ke Mampang Prapatan'},
+    /*{text:'Jadwal kuliah kamu hari ini', isBot: 'bot binusmaya-schedule', isBimaySchedule: true,
     list: [
       {
         name: 'Enterpreneour',
         room: '825',
         time: '09:20 - 11:00'
-      },
-      {
-        name: 'Komputer Jaringan',
-        room: '600',
-        time: '11:20 - 13:00'
       }
     ]
-    }
+  }*/
     /*{text:'Ini Halte terdekat dalam radius 500m :)', isBot: 'bot is-busway', isBusway: true,
       list: [{
         distance: 343,
@@ -95,14 +91,12 @@ angular.module('starter.controllers', ['BinusMayaFactory'])
         lng: "106.796937",
         name: "Grogol 1"
       }]
-    },
+    },*/ /*
     {text:'Ini dia rute dari Sumber Waras ke Mampang Prapatan', isBot: 'bot is-busway-route', isBuswayRoute: true,
       list: [{
         stations: [
           {id: 51, name: "Sumber Waras"},
           {id: 51, name: "Harmoni Central"},
-          {id: 51, name: "Monas"},
-          {id: 51, name: "Bank Indonesia"},
           {id: 12, name: "Dukuh Atas 1"},
         ]
       }, {
@@ -111,7 +105,7 @@ angular.module('starter.controllers', ['BinusMayaFactory'])
           {id: 105, name: "Mampang Prapatan"},
         ]
       }]
-    },
+    }, /*
     {text:'Hello !', isBot: ''},
     {text:'Film yang ada di biskop hari ini adalah', isBot: 'bot is-movie', isMovie: true,
       list: ['SAN ANDREAS', 'THE MARTIAN', 'AMERICAN ULTRA', '3', 'HOLLYWORD ADVENTURES']

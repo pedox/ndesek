@@ -35,7 +35,7 @@ var _halteBusway = {
                 "lat": "-6.16582",
                 "lng": "106.820429",
                 "id": 6,
-                "name": "Harmoni Central"
+                "name": "Harmoni"
             },
             {
                 "lat": "-6.176157",
